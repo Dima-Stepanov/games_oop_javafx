@@ -27,7 +27,7 @@ public final class Logic {
                 if (findBy(cell) != -1) {
                     throw new OccupiedCellException();
                 }
-            }catch (FigureNotFoundException e) {
+            } catch (FigureNotFoundException e) {
                 e.printStackTrace();
             }
         }

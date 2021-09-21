@@ -23,11 +23,12 @@ public class Win {
 
     public static boolean checkHor(int[][] board, int row) {
         boolean rsl = true;
-        for (int cell : board[row])
+        for (int cell : board[row]) {
             if (cell == 0) {
                 rsl = false;
                 break;
             }
+        }
         return rsl;
     }
 

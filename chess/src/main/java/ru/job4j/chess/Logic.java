@@ -25,7 +25,9 @@ public final class Logic {
         for (Cell cell : steps) {
             try {
                 if (findBy(cell) != -1) {
-                    throw new OccupiedCellException();
+                    throw new OccupiedCellException(
+                            String.format("Cell %s is busy", cell)
+                    );
                 }
             } catch (FigureNotFoundException e) {
                 e.printStackTrace();
@@ -46,6 +48,8 @@ public final class Logic {
                 return index;
             }
         }
-        throw new FigureNotFoundException();
+        throw new FigureNotFoundException(
+                String.format("No figure on the cage from %s", cell)
+        );
     }
 }

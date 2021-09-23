@@ -6,6 +6,7 @@ import ru.job4j.chess.firuges.Figure;
 import ru.job4j.chess.firuges.black.BishopBlack;
 import ru.job4j.chess.firuges.black.PawnBlack;
 
+@SuppressWarnings("checkstyle:EmptyLineSeparator")
 public class LogicTest {
 
     @Test(expected = OccupiedCellException.class)
@@ -39,6 +40,4 @@ public class LogicTest {
         logic.add(bishopBlack);
         logic.move(Cell.C8, Cell.E7);
     }
-
-
 }

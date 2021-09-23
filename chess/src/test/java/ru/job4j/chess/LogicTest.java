@@ -9,7 +9,7 @@ import ru.job4j.chess.firuges.black.PawnBlack;
 public class LogicTest {
 
     @Test(expected = OccupiedCellException.class)
-    public void whenMoveByExeptionOccupiedCellException() throws OccupiedCellException, FigureNotFoundException {
+    public void whenMoveByExeptionOccupiedCellException() throws Exception {
         Logic logic = new Logic();
         Figure bishopBlack = new BishopBlack(Cell.C8);
         Figure pawnBlack = new PawnBlack(Cell.D7);
@@ -27,13 +27,13 @@ public class LogicTest {
     }
 
     @Test(expected = FigureNotFoundException.class)
-    public void whenMoveByFigureNotFoundException() throws OccupiedCellException, FigureNotFoundException {
+    public void whenMoveByFigureNotFoundException() throws Exception {
         Logic logic = new Logic();
         logic.move(Cell.C8, Cell.E6);
     }
 
     @Test(expected = ImpossibleMoveException.class)
-    public void whenMoveByExeptionImpossibleMoveException() throws ImpossibleMoveException, OccupiedCellException, FigureNotFoundException {
+    public void whenMoveByExeptionImpossibleMoveException() throws Exception {
         Logic logic = new Logic();
         Figure bishopBlack = new BishopBlack(Cell.C8);
         logic.add(bishopBlack);

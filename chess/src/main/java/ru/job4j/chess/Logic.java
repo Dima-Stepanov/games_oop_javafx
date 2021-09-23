@@ -22,9 +22,11 @@ public final class Logic {
     }
 
     private boolean free(Cell[] steps) throws OccupiedCellException {
+        boolean rsl = true;
         for (Cell cell : steps) {
             try {
-                if (findBy(cell) != -1) {
+                if (findBy(cell) >= 0) {
+                    rsl = false;
                     throw new OccupiedCellException(
                             String.format("Cell %s is busy", cell)
                     );
@@ -33,7 +35,7 @@ public final class Logic {
                 e.printStackTrace();
             }
         }
-        return true;
+        return rsl;
     }
 
     public void clean() {
